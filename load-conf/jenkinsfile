@@ -2,11 +2,11 @@
 
 // def envConfigFilePath = '/path/to/your/repository/load-conf/env.conf'
 // def envConfig = new File(envConfigFilePath).text
-
+def config
 node {
     def workspacePath = env.WORKSPACE
     echo "Current workspace: ${workspacePath}"
-    
+    config = readYaml file: "${workspacePath}/config.yaml"
     // You can now use 'workspacePath' to construct file paths within the workspace
 }
 
