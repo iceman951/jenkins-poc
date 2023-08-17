@@ -1,4 +1,4 @@
-def location = "pwd".execute().text
+def location = "ls".execute().text
 println location
 
 pipeline {
