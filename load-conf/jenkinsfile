@@ -1,4 +1,5 @@
-System.getProperty("user.dir");
+env.WORKSPACE = pwd()
+def conf = readFile "${env.WORKSPACE}/pipeline.conf"
 // def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
