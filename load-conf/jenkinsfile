@@ -1,4 +1,5 @@
-def conf = new File('load-conf/pipeline.conf').text
+System.getProperty("user.dir");
+// def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
     stages {
