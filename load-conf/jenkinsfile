@@ -1,7 +1,6 @@
-env.WORKSPACE = pwd()
-println env.WORKSPACE
+String currentDir = new File(".").getAbsolutePath()
 
-def conf = new File("${env.WORKSPACE}/pipeline.conf")
+def conf = new File("${currentDir}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
