@@ -4,8 +4,10 @@
 // def envConfig = new File(envConfigFilePath).text
 
 node {
-        def workspacePath = currentBuild.workspace
+    def workspacePath = env.WORKSPACE
     echo "Current workspace: ${workspacePath}"
+    
+    // You can now use 'workspacePath' to construct file paths within the workspace
 }
 
 pipeline {
