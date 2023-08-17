@@ -1,4 +1,4 @@
-def worksapce = "${env.WORKSPACE}"
+def worksapce = new File("${env.WORKSPACE}/pipeline.conf")
 
 // def conf = new File("${workspace}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
