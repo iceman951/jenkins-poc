@@ -1,9 +1,10 @@
+def conf = new File('pipeline.conf').text
 pipeline {
     agent any
     stages {
         stage ('test1') {
             steps {
-                echo 'test1'
+                echo "${conf}"
             }
         }
         stage ('test2') {
