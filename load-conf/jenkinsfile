@@ -1,13 +1,11 @@
 import java.io.File
-def worksapce "${env.WORKSPACE}}"
-def text = new File($worksapce + "/load-conf/pipeline.conf").newInputStream()
+def workspace = "${env.WORKSPACE}}"
+def text = new File($workspace + "/load-conf/pipeline.conf").newInputStream()
 is.eachLine { 
     println it
 }
 is.close()
 
-// def conf = new File("${workspace}/pipeline.conf")
-// def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
     stages {
