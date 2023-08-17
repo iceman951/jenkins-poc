@@ -1,17 +1,11 @@
-import java.io.File
-def workspace = env.WORKSPACE
-def text = new File("${workspace}/load-conf/pipeline.conf").newInputStream()
-is.eachLine { 
-    println it
-}
-is.close()
+def envConfig = readFile("${WORKSPACE}/load-conf/env.conf")
 
 pipeline {
     agent any
     stages {
         stage ('test1') {
             steps {
-                echo "${text}"
+                echo "${envConfig}"
                 // echo "${conf}"
                 // echo "${conf.text}"
             }
