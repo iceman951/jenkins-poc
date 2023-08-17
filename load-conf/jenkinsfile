@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage ('test1') {
             steps {
-                echo "${workspace.text}"
+                echo "${workspace}"
                 // echo "${conf}"
                 // echo "${conf.text}"
             }
