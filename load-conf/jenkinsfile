@@ -1,28 +1,15 @@
-import groovy.yaml.YamlSlurper
-
-// def envConfig = readFile("${WORKSPACE}/load-conf/env.conf")
-
-// def envConfigFilePath = '/path/to/your/repository/load-conf/env.conf'
-// def envConfig = new File(envConfigFilePath).text
-def config
-node {
-    script {
-            def workspacePath = env.WORKSPACE
-    echo "Current workspace: ${workspacePath}"
-    // def configFileContent = readFile("${workspacePath}/config.yaml")
-    config = new YamlSlurper().parseText("${workspacePath}/config.yaml")
-    }
-    // You can now use 'workspacePath' to construct file paths within the workspace
-}
+def location = "pwd".execute().text
+println location
 
 pipeline {
     agent any
     stages {
         stage ('test1') {
             steps {
-                echo "${config}"
+                // echo "${config}"
                 // echo "${conf}"
                 // echo "${conf.text}"
+                echo 'test1'
             }
         }
         stage ('test2') {
