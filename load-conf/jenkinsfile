@@ -1,5 +1,6 @@
 import java.io.File
-def worksapce = new File("${env.WORKSPACE}/load-conf/pipeline.conf").newInputStream()
+def worksapce "${env.WORKSPACE}}"
+def text = new File($worksapce + "/load-conf/pipeline.conf").newInputStream()
 is.eachLine { 
     println it
 }
@@ -12,7 +13,7 @@ pipeline {
     stages {
         stage ('test1') {
             steps {
-                echo "${workspace.text}"
+                echo "${text}"
                 // echo "${conf}"
                 // echo "${conf.text}"
             }
