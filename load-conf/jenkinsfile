@@ -6,7 +6,9 @@ def config
 node {
     def workspacePath = env.WORKSPACE
     echo "Current workspace: ${workspacePath}"
-    config = readYaml file: "${workspacePath}/config.yaml"
+    def configFileContent = readFile("${workspacePath}/config.yaml")
+    def yaml = new Yaml()
+    config = yaml.load(configFileContent)
     // You can now use 'workspacePath' to construct file paths within the workspace
 }
 
@@ -15,7 +17,7 @@ pipeline {
     stages {
         stage ('test1') {
             steps {
-                echo "${envConfig}"
+                echo "${config}"
                 // echo "${conf}"
                 // echo "${conf.text}"
             }
