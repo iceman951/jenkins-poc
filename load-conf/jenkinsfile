@@ -1,5 +1,5 @@
 env.WORKSPACE = pwd()
-def conf = readFile "${env.WORKSPACE}/pipeline.conf"
+def conf = new File("${env.WORKSPACE}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
