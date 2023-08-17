@@ -1,6 +1,6 @@
 import java.io.File
 def workspace = "${env.WORKSPACE}}"
-def text = new File($workspace + "/load-conf/pipeline.conf").newInputStream()
+def text = new File("${workspace}" + "/load-conf/pipeline.conf").newInputStream()
 is.eachLine { 
     println it
 }
