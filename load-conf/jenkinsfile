@@ -1,4 +1,4 @@
-def conf = new File('pipeline.conf').text
+def conf = new File('/pipeline.conf').text
 pipeline {
     agent any
     stages {
