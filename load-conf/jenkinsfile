@@ -1,4 +1,4 @@
-def workspace = System.getProperty("user.dir")
+def workspace = System.getProperty("user.dir").text
 
 def conf = new File("${workspace}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
