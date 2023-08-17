@@ -1,4 +1,12 @@
-def envConfig = readFile("${WORKSPACE}/load-conf/env.conf")
+// def envConfig = readFile("${WORKSPACE}/load-conf/env.conf")
+
+// def envConfigFilePath = '/path/to/your/repository/load-conf/env.conf'
+// def envConfig = new File(envConfigFilePath).text
+
+node {
+        def workspacePath = currentBuild.workspace
+    echo "Current workspace: ${workspacePath}"
+}
 
 pipeline {
     agent any
