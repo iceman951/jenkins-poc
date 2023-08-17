@@ -1,7 +1,10 @@
-System.getProperty("user.dir")
-def workspace = System.getProperty("user.dir")
+node('label'){
+    //now you are on slave labeled with 'label'
+    def workspace = pwd()
+    //${workspace} will now contain an absolute path to job workspace on slave 
+}
 
-def conf = new File("${workspace}/pipeline.conf")
+// def conf = new File("${workspace}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
 pipeline {
     agent any
@@ -9,8 +12,8 @@ pipeline {
         stage ('test1') {
             steps {
                 echo "${workspace}"
-                echo "${conf}"
-                echo "${conf.text}"
+                // echo "${conf}"
+                // echo "${conf.text}"
             }
         }
         stage ('test2') {
