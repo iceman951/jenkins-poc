@@ -1,4 +1,6 @@
 env.WORKSPACE = pwd()
+println env.WORKSPACE
+
 def conf = new File("${env.WORKSPACE}/pipeline.conf")
 // def conf = new File('load-conf/pipeline.conf').text
 pipeline {
