@@ -6,9 +6,6 @@ pipeline {
     stages {
         stage ('test1') {
             steps {
-                // echo "${config}"
-                // echo "${conf}"
-                // echo "${conf.text}"
                 echo 'test1'
                 echo "${env.git-url}"
             }
