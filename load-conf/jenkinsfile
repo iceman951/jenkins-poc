@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo 'test1'
                 echo "${env.giturl}"
+                echo "${env.git2}"
             }
         }
         stage ('test2') {
