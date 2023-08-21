@@ -10,6 +10,7 @@ pipeline {
                 // echo "${conf}"
                 // echo "${conf.text}"
                 echo 'test1'
+                echo "${env.git-url}"
             }
         }
         stage ('test2') {
