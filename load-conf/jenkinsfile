@@ -10,6 +10,7 @@ pipeline {
                 echo "env.giturl => ${env.giturl}"
                 echo "env.git2 => ${env.git2}"
                 echo "env.ECHO_SHELL => ${env.ECHO_SHELL}"
+                echo "env.git3 => ${env.git3}"
             }
         }
         stage ('test2') {
