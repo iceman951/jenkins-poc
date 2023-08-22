@@ -9,7 +9,7 @@ pipeline {
                 echo 'test1'
                 echo "env.giturl => ${env.giturl}"
                 echo "env.git2 => ${env.git2}"
-                echo "env.COMPUTE_VAR => ${env.COMPUTE_VAR}"
+                echo "env.ECHO_SHELL => ${env.ECHO_SHELL}"
             }
         }
         stage ('test2') {
