@@ -5,6 +5,7 @@ pipeline {
         stage("Initialisation") {
             steps { 
                 script {
+                    echo "fiest script"
                     load("load-steps/steps/step-initialisation.groovy").execute(props)
                 } 
             }
