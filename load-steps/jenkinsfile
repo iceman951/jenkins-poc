@@ -1,4 +1,9 @@
-def props = [:]
+def props = [
+    applicationName: 'MyApp',
+    environment: 'production',
+    version: '1.0.0'
+]
+
 pipeline {
     agent any
     stages {
@@ -13,7 +18,7 @@ pipeline {
         }
 
     }
-  post {
-    always { script { load("steps/step-post.groovy").execute(props) } }
-  }
+  // post {
+  //   always { script { load("steps/step-post.groovy").execute(props) } }
+  // }
 }
