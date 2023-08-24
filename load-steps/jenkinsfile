@@ -13,4 +13,7 @@ pipeline {
         }
 
     }
+  post {
+    always { script { load("steps/step-post.groovy").execute(props) } }
+  }
 }
